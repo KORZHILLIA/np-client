@@ -5,22 +5,28 @@ import * as tnnActions from "./tnn-actions";
 
 const initialState = {
   totalInfo: [],
-  current: null,
+  current: {},
 };
 
 const infoReducer = createReducer(initialState, (builder) =>
-  builder.addCase(tnnActions.getTNNInfoSuccess, (store, { payload }) => {
-    const { totalInfo } = store;
-    const requiredIdx = totalInfo.findIndex(
-      (tnn) => tnn.number === payload.number
-    );
-    if (requiredIdx !== -1) {
-      const newTotalInfo = [...totalInfo];
-      newTotalInfo.splice(requiredIdx, 1, payload);
-      return { ...store, totalInfo: newTotalInfo, current: payload };
-    }
-    return { ...store, totalInfo: [...totalInfo, payload], current: payload };
-  })
+  builder
+    .addCase(tnnActions.getTNNInfoSuccess, (store, { payload }) => {
+      const { totalInfo } = store;
+      const requiredIdx = totalInfo.findIndex(
+        (tnn) => tnn.number === payload.number
+      );
+      if (requiredIdx !== -1) {
+        const newTotalInfo = [...totalInfo];
+        newTotalInfo.splice(requiredIdx, 1, payload);
+        return { ...store, totalInfo: newTotalInfo, current: payload };
+      }
+      return { ...store, totalInfo: [...totalInfo, payload], current: payload };
+    })
+    .addCase(tnnActions.clearTNNHistory, (store) => ({
+      ...store,
+      totalInfo: [],
+    }))
+    .addCase(tnnActions.clearTNNCurrent, (store) => ({ ...store, current: {} }))
 );
 
 const loadingReducer = createReducer(false, (builder) =>
@@ -35,6 +41,7 @@ const errorReducer = createReducer(null, (builder) =>
     .addCase(tnnActions.getTNNInfoRequest, () => null)
     .addCase(tnnActions.getTNNInfoSuccess, () => null)
     .addCase(tnnActions.getTNNInfoError, (_, { payload }) => payload)
+    .addCase(tnnActions.clearTNNError, () => null)
 );
 
 const infoPersistConfig = {

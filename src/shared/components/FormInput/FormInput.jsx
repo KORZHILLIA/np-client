@@ -9,6 +9,7 @@ const FormInput = ({
   value,
   minLength,
   maxLength,
+  pattern,
   required,
   autocomplete,
   onChange,
@@ -34,6 +35,7 @@ const FormInput = ({
         value={value}
         minLength={minLength}
         maxLength={maxLength}
+        pattern={pattern}
         required={required}
         autoComplete={autocomplete}
         onChange={onChange}
@@ -61,6 +63,7 @@ FormInput.propTypes = {
   value: PropTypes.string,
   minLength: PropTypes.number,
   maxLength: PropTypes.number,
+  pattern: PropTypes.string,
   required: PropTypes.bool,
   autocomplete: PropTypes.oneOf(["on", "off"]),
   onChange: PropTypes.func.isRequired,

@@ -1,0 +1,22 @@
+@import "../../styles/base/variables";
+@import "../../styles/utils/mixins";
+
+.general {
+  padding: 20px;
+  border: 1px solid $clr-gray-header;
+  border-radius: 4px;
+  box-shadow: $shadow-btn;
+}
+
+.bold {
+  @include font(16px, 20px, 600);
+}
+
+.pale {
+  @extend .bold;
+  font-weight: 500;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}

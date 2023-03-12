@@ -1,0 +1,28 @@
+@import "../../styles/base/variables";
+@import "../../styles/utils/mixins";
+
+.head {
+  margin: 15px;
+  @include font(32px, 36px);
+  text-align: center;
+}
+
+.link {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  @include font(20px, 24px);
+  text-align: center;
+  color: $clr-gray;
+  background-color: $clr-gray-light;
+  box-shadow: $shadow-btn;
+}
+
+.fetchData {
+  margin-top: 15px;
+  @include flex(column);
+
+  @include mq(tablet) {
+    @include flex(row);
+  }
+}

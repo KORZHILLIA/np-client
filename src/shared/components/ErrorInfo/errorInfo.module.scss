@@ -1,0 +1,27 @@
+@import "../../../styles/base/variables";
+@import "../../../styles/utils/mixins";
+
+.general {
+  max-width: 80%;
+  @include flex(column);
+  margin: 20px auto 0;
+  padding: 20px;
+  border: 1px solid $clr-gray;
+  border-radius: 4px;
+}
+
+.text {
+  @include font(16px, 24px);
+  color: $clr-accent;
+  text-align: center;
+}
+
+.btn {
+  margin: 10px auto 0;
+  padding: 10px;
+  border-radius: 4px;
+  @include font(14px, 21px);
+  color: $clr-gray-dark;
+  background-color: $clr-gray-light;
+  box-shadow: $shadow-btn;
+}

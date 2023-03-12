@@ -4,23 +4,32 @@ import styles from "./tNNInputForm.module.scss";
 
 const initialState = { number: "" };
 
-const TNNInputForm = ({ onSubmit }) => {
+const TNNInputForm = ({ onSubmit, currentNumber }) => {
   const { formState, onInputChange, onFormSubmit } = useForm({
     initialState,
     onSubmit,
+    outerVar: { name: "number", value: currentNumber },
   });
 
   const { number } = formState;
+
   return (
     <form onSubmit={onFormSubmit}>
       <FormInput
-        label="Invoice number"
+        label="Номер накладної"
         type="text"
         name="number"
         value={number}
-              placeholder="Type here..."
-              onChange={onInputChange}
+        pattern="^[2,5]{1}\d{13}"
+        placeholder="59000937551465"
+        onChange={onInputChange}
+        generalStyle={styles.general}
+        labelStyle={styles.label}
+        inputStyle={styles.input}
       />
+      <button className={styles.btn} type="submit">
+        Перевірити
+      </button>
     </form>
   );
 };

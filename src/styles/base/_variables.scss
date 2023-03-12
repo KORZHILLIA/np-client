@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rokkitt&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn&display=swap");
 
 $clr-body-bg: #f6f7fb;
 $clr-white: #fff;
@@ -7,11 +6,10 @@ $clr-accent: #4735af;
 $clr-gray: #b1b5c2;
 $clr-gray-light: #f5f7fa;
 $clr-gray-dark: #242a3780;
-$clr-gray-darkest: #6d7a8d;
-$clr-gray-darkest-hover: #47566f;
+$clr-gray-darkest: #47566f;
 $clr-gray-header: #e0e5eb;
 $clr-gray-support: #898f9f;
-$clr-accent-form: #f25137;
+$clr-accent: #e82a2a;
 $clr: #47566f;
 
 $clr-font-main: #242a37;
@@ -29,5 +27,4 @@ $gradient: linear-gradient(to bottom, #091e3fcc, #091e3fcc);
 $transition: 300ms ease-in-out;
 $transition-slow: 1000ms linear;
 
-$font-main: "Rokkitt", serif;
-$font-brand: "Abril Fatface", cursive;
+$font-main: "Vollkorn", serif;

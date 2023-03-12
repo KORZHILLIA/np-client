@@ -10,7 +10,7 @@
   font-style: $fs;
 }
 
-@mixin flex($jc: center, $ai: center, $direction: row) {
+@mixin flex($direction: row, $jc: center, $ai: center) {
   display: flex;
   flex-direction: $direction;
   justify-content: $jc;
