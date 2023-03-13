@@ -1,5 +1,6 @@
 body {
   max-width: 100%;
+  padding: 15px 0;
   overflow-x: hidden;
   font-family: $font-main;
   @include font(12px, 16px);
@@ -28,6 +29,16 @@ button {
   padding: 0;
   border: none;
   cursor: pointer;
+  color: $clr-gray;
+  background-color: $clr-gray-light;
+  transition: color $transition-slow, background-color $transition;
+  box-shadow: $shadow-btn;
+
+  &:hover,
+  &:focus {
+    color: $clr-accent;
+    background-color: $clr-gray;
+  }
 }
 
 a {

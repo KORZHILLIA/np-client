@@ -12,17 +12,18 @@ const TNNHistory = ({ onClick }) => {
 
   const elements = tnnHistory.length
     ? tnnHistory.map(({ _id, number }) => (
-        <li key={_id}>
+        <li className={styles.item} key={_id}>
           <p onClick={() => onClick({ number })}>{number}</p>
         </li>
       ))
     : null;
 
   return tnnHistory.length ? (
-    <div>
-      <ul>{elements}</ul>
-      <button type="button" onClick={clearHistory}>
-        Clear
+    <div className={styles.general}>
+      <h2 className={styles.head}>Історія</h2>
+      <ul className={styles.list}>{elements}</ul>
+      <button className={styles.btn} type="button" onClick={clearHistory}>
+        Очистити
       </button>
     </div>
   ) : null;

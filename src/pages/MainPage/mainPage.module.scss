@@ -5,24 +5,42 @@
   margin: 15px;
   @include font(32px, 36px);
   text-align: center;
+  color: $clr-accent;
+
+  @include mq(tablet) {
+    @include font(40px, 42px);
+  }
 }
 
-.link {
-  display: block;
-  margin: 20px auto;
-  padding: 10px;
-  @include font(20px, 24px);
-  text-align: center;
-  color: $clr-gray;
-  background-color: $clr-gray-light;
-  box-shadow: $shadow-btn;
-}
-
-.fetchData {
+.fetchedData {
   margin-top: 15px;
   @include flex(column);
 
   @include mq(tablet) {
-    @include flex(row);
+    @include flex(row, space-evenly, stretch);
+    column-gap: 10px;
+  }
+}
+
+.link {
+  display: block;
+  margin: 40px auto 0;
+  padding: 10px;
+  @include font(20px, 24px);
+  text-align: center;
+  color: $clr-accent;
+  background-color: $clr-gray-light;
+  transform: scale(1);
+  transition: transform, $transition;
+  box-shadow: $shadow-btn;
+
+  @include mq(tablet) {
+    width: 50%;
+    @include font(30px, 36px);
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.02);
   }
 }

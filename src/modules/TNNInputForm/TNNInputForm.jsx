@@ -14,7 +14,7 @@ const TNNInputForm = ({ onSubmit, currentNumber }) => {
   const { number } = formState;
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <form className={styles.form} onSubmit={onFormSubmit}>
       <FormInput
         label="Номер накладної"
         type="text"

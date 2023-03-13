@@ -20,14 +20,14 @@ const TNNInfo = () => {
       ) : null}
       {WarehouseSender ? (
         <p className={styles.pale}>
-          <span className={styles.bold}>Відправлено: </span>
+          <span className={styles.bold}>Відправник: </span>
           {CitySender ? <span>{CitySender}, </span> : null}
           {WarehouseSender}
         </p>
       ) : null}
       {WarehouseRecipient ? (
         <p className={styles.pale}>
-          <span className={styles.bold}>Отримано: </span>
+          <span className={styles.bold}>Отримувач: </span>
           {CityRecipient ? <span>{CityRecipient}, </span> : null}
           {WarehouseRecipient}
         </p>

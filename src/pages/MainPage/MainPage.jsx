@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import TNNInputForm from "../../modules/TNNInputForm";
 import TNNInfo from "../../modules/TNNInfo";
 import TNNHistory from "../../modules/TNNHistory";
+import Spinner from "../../shared/components/Spinner";
 import ErrorInfo from "../../shared/components/ErrorInfo";
 import tnnSelectors from "../../redux/tnn/tnn-selectors";
 import { getTNNInfo } from "../../redux/tnn/tnn-operations";
@@ -14,6 +15,8 @@ const MainPage = () => {
   const [currentTNNNumber, setCurrentTNNNumber] = useState(null);
 
   const error = useSelector(tnnSelectors.tnnError);
+  const loading = useSelector(tnnSelectors.tnnLoading);
+  const { CityRecipient } = useSelector(tnnSelectors.currentTNNInfo);
 
   const dispatch = useDispatch();
 
@@ -40,7 +43,7 @@ const MainPage = () => {
               onSubmit={checkInfo}
               currentNumber={currentTNNNumber}
             />
-            <div className={styles.fetchData}>
+            <div className={styles.fetchedData}>
               <TNNInfo />
               <TNNHistory onClick={makeTNNCurrentAndCheckInfo} />
             </div>
@@ -48,10 +51,11 @@ const MainPage = () => {
         ) : (
           <ErrorInfo errorText={error} onClick={clearError} />
         )}
-        <Link className={styles.link} to="/outlets">
-          Check all the outlets
+        <Link className={styles.link} to={`/outlets/${CityRecipient}`}>
+          Список відділень
         </Link>
       </div>
+      {loading ? <Spinner /> : null}
     </main>
   );
 };

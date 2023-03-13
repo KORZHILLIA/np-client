@@ -2,14 +2,24 @@
 @import "../../styles/utils/mixins";
 
 .general {
+  width: 60%;
   padding: 20px;
   border: 1px solid $clr-gray-header;
   border-radius: 4px;
   box-shadow: $shadow-btn;
+
+  @include mq(mobile-only) {
+    width: 90%;
+    margin-bottom: 20px;
+  }
 }
 
 .bold {
   @include font(16px, 20px, 600);
+
+  @include mq(tablet) {
+    @include font(24px, 30px);
+  }
 }
 
 .pale {

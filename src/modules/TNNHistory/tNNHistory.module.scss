@@ -1,0 +1,69 @@
+@import "../../styles/base/variables";
+@import "../../styles/utils/mixins";
+
+.general {
+  flex-grow: 1;
+  padding: 20px;
+  border: 1px solid $clr-gray-header;
+  border-radius: 4px;
+  box-shadow: $shadow-btn;
+
+  @include mq(mobile-only) {
+    width: 90%;
+  }
+}
+
+.head {
+  margin-bottom: 8px;
+  text-align: center;
+  @include font(24px, 28px, 600);
+
+  @include mq(tablet) {
+    @include font(30px, 36px, 600);
+  }
+}
+
+.list {
+  width: 80%;
+  margin: 0 auto;
+
+  @include mq(desktop) {
+    width: 50%;
+  }
+}
+
+.item {
+  padding: 5px;
+  border: 1px solid $clr-gray;
+  border-radius: 2px;
+  @include font(16px, 18px);
+  text-align: center;
+  box-shadow: $shadow-btn;
+  transform: scale(1);
+  transition: transform $transition;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+
+  @include mq(tablet) {
+    @include font(20px, 24px);
+  }
+}
+
+.btn {
+  margin: 20px auto 0;
+  padding: 10px;
+  border-radius: 4px;
+  @include font(18px);
+
+  @include mq(tablet) {
+    @include font(24px);
+  }
+}

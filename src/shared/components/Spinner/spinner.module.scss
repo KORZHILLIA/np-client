@@ -1,0 +1,26 @@
+.spinner {
+  position: fixed;
+  top: calc(50vh - 50px);
+  left: calc(50vw - 50px);
+  animation: rotation 3s linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

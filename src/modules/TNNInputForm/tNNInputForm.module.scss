@@ -1,13 +1,31 @@
 @import "../../styles/base/variables";
 @import "../../styles/utils/mixins";
 
+.form {
+  @include mq(tablet) {
+    @include flex();
+  }
+}
+
 .general {
   @include flex(column);
+
+  @include mq(tablet) {
+    @include flex();
+  }
 }
 
 .label {
-  margin-bottom: 5px;
   @include font(20px, 24px);
+
+  @include mq(mobile-only) {
+    margin-bottom: 5px;
+  }
+
+  @include mq(tablet) {
+    margin-right: 8px;
+    @include font(24px);
+  }
 }
 
 .input {
@@ -16,18 +34,29 @@
   border: 1px solid $clr-gray;
   border-radius: 2px;
   @include font(16px);
+  color: $clr-accent;
 
   &::placeholder {
     color: $clr-gray;
   }
+
+  @include mq(tablet) {
+    height: 36px;
+    @include font(20px);
+  }
 }
 
 .btn {
-  margin: 10px auto 0;
   padding: 5px;
   border-radius: 4px;
-  @include font(16px, 20px);
-  color: $clr-gray-dark;
-  background-color: $clr-gray-light;
-  box-shadow: $shadow-btn;
+  @include font(18px, 27px);
+
+  @include mq(mobile-only) {
+    margin: 10px auto 0;
+  }
+
+  @include mq(tablet) {
+    margin-left: 10px;
+    @include font(24px, 30px);
+  }
 }

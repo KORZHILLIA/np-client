@@ -1,7 +1,9 @@
+import { useParams } from "react-router-dom";
 import styles from "./outletsPage.module.scss";
 
 const OutletsPage = () => {
-  return <h2>Outlets Page</h2>;
+  const { CityRecipient } = useParams();
+  return <h2>{CityRecipient}</h2>;
 };
 
 export default OutletsPage;
