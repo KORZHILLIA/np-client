@@ -8,7 +8,7 @@ const GeneralRoutes = () => {
     <Suspense fallback={null}>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/outlets/:CityRecipient" element={<OutletsPage />} />
+        <Route path="/outlets/:requiredCity" element={<OutletsPage />} />
       </Routes>
     </Suspense>
   );

@@ -16,7 +16,8 @@ const MainPage = () => {
 
   const error = useSelector(tnnSelectors.tnnError);
   const loading = useSelector(tnnSelectors.tnnLoading);
-  const { CityRecipient } = useSelector(tnnSelectors.currentTNNInfo);
+  const current = useSelector(tnnSelectors.currentTNNInfo);
+  const { CityRecipient, CitySender } = current;
 
   const dispatch = useDispatch();
 
@@ -51,9 +52,20 @@ const MainPage = () => {
         ) : (
           <ErrorInfo errorText={error} onClick={clearError} />
         )}
-        <Link className={styles.link} to={`/outlets/${CityRecipient}`}>
-          Список відділень
-        </Link>
+        {current ? (
+          <div className={styles.links}>
+            {CityRecipient ? (
+              <Link className={styles.link} to={`/outlets/${CityRecipient}`}>
+                Список відділень міста отримувача
+              </Link>
+            ) : null}
+            {CitySender ? (
+              <Link className={styles.link} to={`/outlets/${CitySender}`}>
+                Список відділень міста відправника
+              </Link>
+            ) : null}
+          </div>
+        ) : null}
       </div>
       {loading ? <Spinner /> : null}
     </main>

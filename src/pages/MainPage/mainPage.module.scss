@@ -22,9 +22,16 @@
   }
 }
 
+.links {
+  margin-top: 40px;
+  @include mq(tablet) {
+    @include flex();
+    column-gap: 20px;
+  }
+}
+
 .link {
   display: block;
-  margin: 40px auto 0;
   padding: 10px;
   @include font(20px, 24px);
   text-align: center;
@@ -34,8 +41,13 @@
   transition: transform, $transition;
   box-shadow: $shadow-btn;
 
+  @include mq(mobile-only) {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
   @include mq(tablet) {
-    width: 50%;
     @include font(30px, 36px);
   }
 

@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 import tnnSelectors from "../../redux/tnn/tnn-selectors";
 import { clearTNNHistory } from "../../redux/tnn/tnn-actions";
 import styles from "./tNNHistory.module.scss";
@@ -29,4 +30,11 @@ const TNNHistory = ({ onClick }) => {
   ) : null;
 };
 
+TNNHistory.defaultProps = {
+  onClick: () => {},
+};
+
+TNNHistory.propTypes = {
+  onClick: PropTypes.func,
+};
 export default TNNHistory;

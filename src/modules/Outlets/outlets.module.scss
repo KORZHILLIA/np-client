@@ -1,0 +1,9 @@
+@import "../../styles/utils/mixins";
+
+.list {
+  margin: 0 auto;
+
+  @include mq(desktop) {
+    max-width: 80%;
+  }
+}

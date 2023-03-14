@@ -1,0 +1,29 @@
+@import "../../../styles//base/variables";
+@import "../../../styles/utils/mixins";
+
+.item {
+  padding: 15px;
+  border: 1px solid $clr-gray;
+  border-radius: 2px;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.bold {
+  @include font(16px, 20px, 600);
+
+  @include mq(tablet) {
+    @include font(24px, 30px, 600);
+  }
+}
+
+.pale {
+  @extend .bold;
+  font-weight: 500;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}

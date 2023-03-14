@@ -41,7 +41,7 @@
   }
 
   @include mq(tablet) {
-    height: 36px;
+    height: 40px;
     @include font(20px);
   }
 }

@@ -8,3 +8,8 @@ export const fetchTNNInfo = async (tnnNumber) => {
   const { data } = await instance.get(`/tracking/${tnnNumber}`);
   return data;
 };
+
+export const fetchOutlets = async (city) => {
+  const { data } = await instance.get(`/outlet/${city}`);
+  return data;
+};

@@ -1,6 +1,6 @@
 import { useMemo, memo } from "react";
-import { nanoid } from "nanoid";
 import PropTypes from "prop-types";
+import { nanoid } from "nanoid";
 
 const FormInput = ({
   label,

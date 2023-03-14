@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import useForm from "../../shared/hooks/useForm";
 import FormInput from "../../shared/components/FormInput";
 import styles from "./tNNInputForm.module.scss";
@@ -34,4 +35,12 @@ const TNNInputForm = ({ onSubmit, currentNumber }) => {
   );
 };
 
+TNNInputForm.defaultProps = {
+  onSubmit: () => {},
+};
+
+TNNInputForm.propTypes = {
+  onSubmit: PropTypes.func,
+  currentNumber: PropTypes.string,
+};
 export default TNNInputForm;

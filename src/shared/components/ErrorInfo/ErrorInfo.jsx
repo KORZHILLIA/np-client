@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styles from "./errorInfo.module.scss";
 
 const ErrorInfo = ({ errorText, onClick }) => {
@@ -11,4 +12,12 @@ const ErrorInfo = ({ errorText, onClick }) => {
   );
 };
 
+ErrorInfo.defaultProps = {
+  onClick: () => {},
+};
+
+ErrorInfo.propTypes = {
+  errorText: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+};
 export default ErrorInfo;
