@@ -8,7 +8,7 @@ const Outlets = ({ items }) => {
     const updatedDescription = helpers.cutDescriptionString(Description);
     return (
       <OutletsItem
-        id={_id}
+        key={_id}
         description={updatedDescription}
         address={ShortAddress}
         phone={Phone}

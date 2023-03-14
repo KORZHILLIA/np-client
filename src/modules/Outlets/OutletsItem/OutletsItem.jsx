@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import styles from "./outletsItem.module.scss";
 
-const OutletsItem = ({ id, description, address, phone }) => {
+const OutletsItem = ({ description, address, phone }) => {
   return (
-    <li className={styles.item} key={id}>
+    <li className={styles.item}>
       {description ? <p className={styles.pale}>{description}</p> : null}
       {address ? (
         <p className={styles.pale}>
@@ -22,7 +22,6 @@ const OutletsItem = ({ id, description, address, phone }) => {
 };
 
 OutletsItem.propTypes = {
-  id: PropTypes.string.isRequired,
   description: PropTypes.string,
   address: PropTypes.string,
   phone: PropTypes.string,

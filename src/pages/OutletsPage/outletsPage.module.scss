@@ -22,10 +22,10 @@
   text-align: center;
   border: 1px solid $clr-gray;
   border-radius: 4px;
-  background-color: $clr-field-border;
+  background-color: $clr-low-opacity;
 
   @include mq(tablet) {
-    top: 20px;
+    top: 75px;
     bottom: unset;
   }
 }
